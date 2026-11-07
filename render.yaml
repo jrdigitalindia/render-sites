@@ -1,0 +1,26 @@
+# Render Blueprint for neurosharpus.onrender.com (Static Site)
+# Render's static-site hosting does NOT process .htaccess (that's Apache-only).
+# This file is Render's own mechanism for the /order redirect.
+# Replace the destination URL below with the real affiliate / checkout link,
+# then redeploy (or set the same rule in the Render dashboard under
+# your static site -> Redirects/Rewrites, which also works without this file).
+
+services:
+  - type: web
+    name: neurosharp-site
+    runtime: static
+    staticPublishPath: .
+    routes:
+      - type: redirect
+        source: /order
+        destination: https://REPLACE-WITH-AFFILIATE-CHECKOUT-LINK.example.com
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
