@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mindvaultus.onrender.com/sitemap.xml

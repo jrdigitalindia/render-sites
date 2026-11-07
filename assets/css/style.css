@@ -1,0 +1,165 @@
+/* =========================================================
+   MIND VAULT — mindvaultus.onrender.com
+   Design System: "Warm Companion"
+   A soft, human, story-led identity — feels like a letter from
+   a trusted daughter/caregiver, not a lab report.
+   Palette: sage green + warm cream + charcoal-brown
+   Type: Sora (display) / Nunito Sans (body) — sans-serif only
+   ========================================================= */
+:root{
+  --sage-deep:#3F5C4C;
+  --sage-mid:#5C7F68;
+  --sage-soft:#8FAE9B;
+  --cream-tint:#F1ECDF;
+  --white:#FFFFFF;
+  --warm-white:#FBF9F4;
+  --text-body:#2B2823;      /* warm near-black, not navy */
+  --text-muted:#6B6459;
+  --border-light:#E6DFCD;
+  --gold-accent:#C99A4B;    /* single warm accent used sparingly */
+  --radius:28px;             /* soft, rounded, organic */
+  --radius-sm:16px;
+  --shadow-soft:0 6px 20px rgba(63,92,76,.12);
+  --shadow-strong:0 10px 32px rgba(63,92,76,.22);
+  --font-head:'Sora',Arial,Helvetica,sans-serif;
+  --font-body:'Nunito Sans',Arial,Helvetica,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden}
+body{
+  font-family:var(--font-body);
+  color:var(--text-body);
+  background:var(--warm-white);
+  font-size:18px;
+  line-height:1.8;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--sage-deep);line-height:1.3;font-weight:700}
+h1{font-size:clamp(32px,5vw,50px)}
+h2{font-size:clamp(26px,3.2vw,34px)}
+h3{font-size:20px}
+p{color:var(--text-body)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+ul{list-style:none}
+button{font-family:var(--font-body);cursor:pointer;border:none}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--sage-deep);color:#fff;padding:12px 20px;z-index:999;border-radius:0 0 12px 0}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sage-mid);outline-offset:3px}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold-accent);font-weight:700;letter-spacing:.03em;text-transform:uppercase;font-size:14px}
+.eyebrow::before{content:"✦";font-size:14px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:18px;font-weight:700;padding:17px 36px;border-radius:999px;min-height:44px;transition:background .2s ease,transform .15s ease}
+.btn-primary{background:var(--sage-deep);color:#fff}
+.btn-primary:hover{background:#324A3D;transform:translateY(-1px)}
+.btn-secondary{background:#fff;color:var(--sage-deep);border:2px solid var(--sage-deep)}
+.btn-secondary:hover{background:var(--cream-tint)}
+.btn-block{width:100%}
+
+.badge-chip{background:var(--cream-tint);color:var(--sage-deep);border-radius:999px;padding:9px 18px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.ticker{background:var(--sage-deep);color:#fff;text-align:center;padding:11px 16px;font-size:15px;font-weight:700}
+
+.section-pad{padding:64px 0}
+@media(min-width:900px){.section-pad{padding:104px 0}}
+.section-off{background:var(--cream-tint)}
+.section-sage{background:var(--sage-deep);color:#fff}
+.section-sage h2,.section-sage h3{color:#fff}
+.section-sage p{color:#E4EDE7}
+
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-soft);padding:34px}
+.grid{display:grid;gap:26px}
+@media(min-width:700px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+.disclaimer{background:var(--cream-tint);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:22px 26px;font-size:16px;color:var(--text-muted)}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(251,249,244,.96);backdrop-filter:blur(6px);transition:box-shadow .2s ease}
+.site-nav.scrolled{box-shadow:var(--shadow-soft)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1140px;margin:0 auto}
+.nav-logo{font-family:var(--font-head);font-weight:700;font-size:21px;color:var(--sage-deep)}
+.nav-links{display:none;gap:26px;align-items:center}
+.nav-links a{font-size:16px;font-weight:700;color:var(--text-body)}
+.nav-links a:hover{color:var(--sage-mid)}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-toggle{display:inline-flex;background:none;font-size:26px;color:var(--sage-deep)}
+@media(min-width:900px){.nav-toggle{display:none}}
+.mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px 24px 20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 0;font-size:17px;font-weight:700;border-bottom:1px solid var(--border-light)}
+.nav-links a.btn,.mobile-menu a.btn{color:#fff}
+
+/* Hero — centered stat/story hero, not the "product-right" template */
+.hero{background:var(--warm-white);padding:56px 0 40px}
+.hero-inner{text-align:center;max-width:760px;margin:0 auto}
+.hero h1{margin:16px 0}
+.hero .lead{font-size:21px;color:var(--text-muted);margin:0 auto 30px;max-width:56ch}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:30px}
+.hero-photo{margin-top:40px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-strong);max-width:420px;margin-left:auto;margin-right:auto}
+
+.trust-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:center}
+@media(min-width:700px){.trust-row{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.trust-row{grid-template-columns:repeat(6,1fr)}}
+.trust-item{padding:16px 10px;font-size:14px;font-weight:700;color:var(--sage-deep);background:var(--cream-tint);border-radius:var(--radius-sm)}
+
+/* Ingredient list — storytelling style, not spec-sheet */
+.ingredient-story{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border-light)}
+.ingredient-story:first-child{border-top:1px solid var(--border-light)}
+.ingredient-icon{width:52px;height:52px;border-radius:50%;background:var(--cream-tint);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px}
+
+/* Pricing */
+.price-card{border:2px solid var(--border-light);border-radius:var(--radius);padding:34px;text-align:center;position:relative;background:#fff}
+.price-card.featured{border-color:var(--gold-accent);box-shadow:var(--shadow-strong)}
+.price-flag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--gold-accent);color:#fff;font-size:13px;font-weight:700;padding:7px 18px;border-radius:999px}
+.price-amount{font-family:var(--font-head);font-size:40px;font-weight:700;color:var(--sage-deep);margin:12px 0 4px}
+.price-per{color:var(--text-muted);font-size:15px}
+
+/* Testimonials — big pull-quote style */
+.testi-card{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-soft)}
+.testi-quote{font-family:var(--font-head);font-size:21px;color:var(--sage-deep);margin-bottom:14px}
+.testi-meta{display:flex;align-items:center;gap:12px}
+.testi-photo{width:52px;height:52px;border-radius:50%;overflow:hidden;object-fit:cover}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border-light)}
+.faq-q{width:100%;background:none;text-align:left;padding:22px 0;font-size:18px;font-weight:700;color:var(--sage-deep);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-a{display:none;padding:0 0 22px;color:var(--text-muted)}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q .plus{transform:rotate(45deg)}
+.plus{transition:transform .2s ease;font-size:22px;flex-shrink:0;color:var(--gold-accent)}
+
+table{width:100%;border-collapse:collapse}
+th,td{padding:16px;text-align:left;border-bottom:1px solid var(--border-light);font-size:17px}
+th{background:var(--cream-tint);color:var(--sage-deep);font-family:var(--font-head)}
+
+/* Footer */
+footer{background:var(--sage-deep);color:#fff;padding:60px 0 26px}
+footer p{color:#fff}
+footer a{color:#D9E5DC}
+footer a:hover{color:#fff}
+.footer-grid{display:grid;gap:32px}
+@media(min-width:700px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-links li{margin-bottom:11px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.18);margin-top:38px;padding-top:24px;font-size:14px;color:#BFD1C5}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--sage-deep);padding:13px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;z-index:80;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
+.sticky-cta p{color:#fff;font-size:16px;font-weight:700}
+.sticky-cta .btn{padding:12px 24px;font-size:16px}
+@media(min-width:900px){.sticky-cta{display:none}}
+
+.popup-overlay{position:fixed;inset:0;background:rgba(43,40,35,.6);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+.popup-overlay.active{display:flex}
+.popup-box{background:#fff;border-radius:var(--radius);max-width:440px;width:100%;padding:38px;text-align:center;position:relative}
+.popup-close{position:absolute;top:16px;right:18px;font-size:24px;background:none;color:var(--text-muted)}
+.popup-timer{font-size:32px;font-weight:700;color:var(--sage-deep);margin:12px 0}
+
+.back-to-top{position:fixed;bottom:90px;right:20px;background:var(--sage-deep);color:#fff;width:48px;height:48px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:20px;z-index:90}
+.back-to-top.show{display:flex}
+@media(min-width:900px){.back-to-top{bottom:30px}}
+
+.reading-progress-bar{position:fixed;top:0;left:0;height:4px;background:var(--gold-accent);z-index:150;width:0}
