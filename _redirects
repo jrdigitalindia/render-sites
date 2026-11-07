@@ -1,0 +1,5 @@
+# Render static-site redirect for /order
+# (breatheus.onrender.com is a Render Static Site, which doesn't read .htaccess —
+# this file is Render/Netlify-style and is what actually makes /order work there.
+# .htaccess is also included in case this site is ever moved to an Apache host.)
+/order  https://547cb3p8v50grsahl5n9u1us5k.hop.clickbank.net  302
