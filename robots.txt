@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slimtide.onrender.com/sitemap.xml
